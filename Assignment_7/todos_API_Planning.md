@@ -121,7 +121,7 @@
     response:
                 {
                     success: true,
-                    data: data: [
+                    data: [
                         {
                             id: "1",
                             title: "Learn GSAP",
