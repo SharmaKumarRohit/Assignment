@@ -106,7 +106,7 @@
                     message: "Your task completed",
                 }
 
-### Description: This endpoint completing your task. Ex - I'm completed second task
+### Description: This endpoint completing your task. Ex - In this case completed second task
 
 ## 4. Update todo
 
@@ -156,7 +156,7 @@
                     message: "Your task updated successfully",
                 }
 
-### Description: This endpoint Updating your task. Ex - I'm updating fourth task
+### Description: This endpoint Updating your task. Ex - In this case updating fourth task
 
 ## 5. Delete todo
 
