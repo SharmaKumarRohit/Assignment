@@ -36,6 +36,8 @@
                     },
                 ]
 
+### Description: Geting all the initial todos
+
 ## 2. Add todo
 
 <ul>
@@ -86,6 +88,8 @@
                     message: "Todo added successfully"
                 }
 
+### Description: This endpoint appending one new todo inside array
+
 ## 3. Toggle todo completed or not
 
 <ul>
@@ -101,6 +105,8 @@
                     success: true,
                     message: "Your task completed",
                 }
+
+### Description: This endpoint completing your task. Ex - I'm completed second task
 
 ## 4. Update todo
 
@@ -150,6 +156,8 @@
                     message: "Your task updated successfully",
                 }
 
+### Description: This endpoint Updating your task. Ex - I'm updating fourth task
+
 ## 5. Delete todo
 
 <ul>
@@ -165,3 +173,5 @@
                     success: true,
                     message: "Todo deleted successfully"
                 }
+
+### Description: This endpoint provide id then, delete the todo
