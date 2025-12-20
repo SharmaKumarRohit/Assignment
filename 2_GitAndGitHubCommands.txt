@@ -1,0 +1,45 @@
+Git >> Version Control
+    v1
+    v2
+    v3
+new v4
+
+>> It is distributed (on Cloud)
+>> Collaboration
+>> Tracking Changes
+>> Recovery
+
+GitHub download link: https://git-scm.com/download
+
+Different types of version controler
+    >> GitHub
+    >> BitBucket
+    >> GitLabs
+    >> GitPod
+
+>> For 1st time to need to configure github in our system
+git config --global user.name "SharmaKumarRohit"
+git config --global user.email "sharmaeditx375@gmail.com"
+
+>> The git config --global color.ui auto command configures Git to automatically use colored output in the terminal when displaying information.
+git config --global color.ui auto
+
+Mandatory Commands:
+>> git init
+>> git remote add origin https://github.com/SharmaKumarRohit/Demo-GitHub.git
+
+git pull origin main
+git status
+
+git add .
+git status
+git commit -m "Commit Message"
+git push
+
+create a new branch
+git checkout -b "branchName"
+
+Switch the branch
+git checkout "branchNameWhichNeedsToBeOpened"
+
+git clone https://github.com/SharmaKumarRohit/Demo-GitHub.git

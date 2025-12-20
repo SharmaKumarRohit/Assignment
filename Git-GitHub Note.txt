@@ -1,0 +1,18 @@
+Git-GitHub Note
+
+1. Check which branch to be present or how many branch are available?
+	command - git branch
+
+2. how to create new branch ?
+	command - git branch branch-name or git checkout -b branch-name
+
+3. how switch another branch ?
+	command - git switch branch-name or git checkout branch-name
+
+4. how to push all code newly created branch ?
+	command - 1. git switch branch-name
+		  2. git add .
+		  3. git commit -m "Your commit message"
+		  4. git push -u origin branch-name - Use this to push the branch for the first time
+		     or
+		     "-u" sets upstream, so next time you can simply use: <git push>
