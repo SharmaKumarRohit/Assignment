@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laundry Services</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="toast-container"></div>
+    <button id="topToBtn"><i class="ri-arrow-up-circle-line"></i></button>
+    <header>
+      <div class="container">
+        <nav>
+          <h1 class="logo">🧺Laundry<span>Pro</span></h1>
+          <ul class="menu-items">
+            <li><a href="#home" class="menu-link">Home</a></li>
+            <li><a href="#services" class="menu-link">Services</a></li>
+            <li><a href="#about" class="menu-link">About Us</a></li>
+            <li><a href="#contact" class="menu-link">Contact Us</a></li>
+            <i class="ri-close-line" id="close"></i>
+          </ul>
+          <a href="#username" class="username">Username</a>
+          <i class="ri-menu-line" id="open"></i>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="home">
+        <div class="container">
+          <div class="hero-container">
+            <div class="hero-content">
+              <h2>
+                Revitalize Your <br />
+                Clothes with Expert <br />
+                <span>Laundry Services!</span>
+              </h2>
+              <p>
+                From Premium dry cleaning to swift wash and fold, we deilver
+                care and convenience. Schedule a pickup and rediscover the
+                freshness of your clothes today!
+              </p>
+              <button class="btn">
+                <i class="ri-store-2-line"></i
+                ><span>Book a service today!</span>
+              </button>
+            </div>
+            <div class="hero-image">
+              <img
+                src="./assets/Laundry.webp"
+                alt="Laundry Image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="achievements-section">
+        <div class="container">
+          <div class="achievements-container">
+            <h2>Our Achievements</h2>
+            <div class="achievements-div">
+              <div class="achievements-content">
+                <h3>15+</h3>
+                <p>Laundry Services</p>
+              </div>
+              <div class="achievements-content">
+                <h3>240+</h3>
+                <p>Happy Customers</p>
+              </div>
+              <div class="achievements-content">
+                <h3>2+ Yrs</h3>
+                <p>Experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services" class="service-section">
+        <div class="container">
+          <div class="service-container">
+            <div class="service-menu">
+              <div class="menu-des">
+                <h2>Our Services</h2>
+                <p>
+                  Click On The Add To Cart Button To Add The Services To Your
+                  Cart
+                </p>
+              </div>
+              <div class="line"></div>
+              <div class="service-menu-items"></div>
+              <div class="line"></div>
+              <p class="menu-info">
+                <i class="ri-information-line"></i>
+                <span>Add the items to the cart and book now</span>
+              </p>
+            </div>
+            <div class="right-panel">
+              <div class="service-todo">
+                <h2>Added Items</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>S.No</th>
+                      <th>Service Name</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <h3 class="total-amount">
+                  <span>Total Amount</span>
+                  <span>&#x20B9; <span id="total-amount">0</span>.00</span>
+                </h3>
+              </div>
+              <div class="form-container">
+                <h2>Book Now</h2>
+                <form id="bookForm">
+                  <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="John Doe" />
+                    <div class="error" id="nameError"></div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="email">Email ID</label>
+                      <input
+                        type="text"
+                        id="email"
+                        placeholder="mailid@gmail.com"
+                      />
+                      <div class="error" id="emailError"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input type="text" id="phone" placeholder="0000000000" />
+                      <div class="error" id="phoneError"></div>
+                    </div>
+                  </div>
+                  <button type="submit" class="form-btn">Book now</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="faq-section">
+        <div class="container">
+          <div class="faq-container">
+            <div class="faq-content">
+              <img src="./assets/laundry.png" alt="laundry" loading="lazy" />
+              <h2>Premium Services</h2>
+              <p>
+                Elevate your wardrobe with our meticulous dry cleaning, ensuring
+                garments look and feel as good as new.
+              </p>
+            </div>
+            <div class="faq-content">
+              <img
+                src="./assets/customer-service.png"
+                alt="customer-service"
+                loading="lazy"
+              />
+              <h2>Quick Support</h2>
+              <p>
+                We're committed to providing prompt solutions to ensure your
+                experience is smooth and worry-free
+              </p>
+            </div>
+            <div class="faq-content">
+              <img
+                src="./assets/delivered.png"
+                alt="delivered"
+                loading="lazy"
+              />
+              <h2>Hassle Free Delivery</h2>
+              <p>
+                Enjoy seamless service with our convenient pickup and delivery
+                options, tailored to your schedule.
+              </p>
+            </div>
+            <div class="faq-content">
+              <img
+                src="./assets/fair-trade.png"
+                alt="fair-trade"
+                loading="lazy"
+              />
+              <h2>Affordable Prices</h2>
+              <p>
+                Experience exceptional care without breaking the bank-our
+                affordable prices make laundry day stress-free.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="subs-section">
+        <div class="container">
+          <div class="subs-container">
+            <h2>
+              Subscribe to Our <br />
+              Newsletter
+            </h2>
+            <form>
+              <input type="text" name="fullname" placeholder="Full name" />
+              <input type="email" name="fullname" placeholder="Email" />
+              <input type="submit" value="Subscribe" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-1">
+            <h1 class="logo">🧺Laundry<span>Pro</span></h1>
+            <div>
+              <h2 class="footer-title">About us</h2>
+              <p class="footer-sub-text">
+                Lorem ipsum Dolor Sit Amet Consectetur. Sed At Congue.
+              </p>
+            </div>
+          </div>
+          <div class="footer-2">
+            <h2 class="footer-title">Important Links</h2>
+            <ul>
+              <li>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="#" class="footer-sub-text">About us</a>
+              </li>
+              <li>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="#" class="footer-sub-text">Contact us</a>
+              </li>
+              <li>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="#" class="footer-sub-text">Privacy Policy</a>
+              </li>
+              <li>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="#" class="footer-sub-text">Terms of use</a>
+              </li>
+              <li>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="#" class="footer-sub-text">Refund Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-3">
+            <h2 class="footer-title">Contact</h2>
+            <p class="footer-sub-text">mail@site.com</p>
+            <p class="footer-sub-text">+91 9123456780</p>
+          </div>
+          <div class="footer-4">
+            <h2 class="footer-title">Follow Us</h2>
+            <ul>
+              <li>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-facebook-circle-line"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-twitter-line"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-youtube-line"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
