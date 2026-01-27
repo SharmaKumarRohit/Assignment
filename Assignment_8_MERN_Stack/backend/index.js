@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-const todoRoute = require("../routes/todoRoute");
+const todoRoute = require("./routes/todoRoute");
 
 const app = express();
 
@@ -19,12 +19,11 @@ app.get("/", (req, res) => {
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    // app.listen(PORT, () =>
-    //   console.log(
-    //     `Server is listening on PORT: http://localhost:${PORT} & Database connected`,
-    //   ),
-    // );
-    console.log("Database connected");
+    app.listen(PORT, () =>
+      console.log(
+        `Server is listening on PORT: http://localhost:${PORT} & Database connected`,
+      ),
+    );
   })
   .catch((error) => console.log(error));
 
