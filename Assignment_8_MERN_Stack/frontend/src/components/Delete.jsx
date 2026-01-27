@@ -51,7 +51,7 @@ function Delete({ ModelClose, id }) {
             onClick={handleDelete}
           >
             {isLoading ? (
-              <LoaderCircle size={16} className="animate-spin" />
+              <LoaderCircle size={19} className="animate-spin" />
             ) : (
               "Delete"
             )}

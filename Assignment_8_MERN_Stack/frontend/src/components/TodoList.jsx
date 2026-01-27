@@ -30,7 +30,7 @@ function TodoList() {
             </p>
           </div>
         ) : (
-          <div className="py-10">
+          <div className="py-10 flex flex-col gap-5">
             {todos.map((todo) => (
               <Todo key={todo._id} {...todo} />
             ))}

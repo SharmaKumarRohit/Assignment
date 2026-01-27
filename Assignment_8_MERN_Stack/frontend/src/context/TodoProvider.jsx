@@ -5,7 +5,7 @@ import {
   useReducer,
   useState,
 } from "react";
-import { getTodos, toggleTodo } from "../utils/todoApi";
+import { getTodos } from "../utils/todoApi";
 
 const TodoContext = createContext();
 
@@ -59,14 +59,6 @@ function TodoProvider({ children }) {
     setEditTask(null);
     setIsEdit(false);
   };
-  const handleToggle = async (id) => {
-    try {
-      await toggleTodo(id);
-      dispatch({ type: "TOGGLE_TODO", payload: { id } });
-    } catch (error) {
-      console.dir(error);
-    }
-  };
   useEffect(() => {
     const fetchTodos = async () => {
       dispatch({ type: "SHOW_LOADING" });
@@ -93,7 +85,6 @@ function TodoProvider({ children }) {
       value={{
         state,
         dispatch,
-        handleToggle,
         isEdit,
         EditStart,
         EditClose,

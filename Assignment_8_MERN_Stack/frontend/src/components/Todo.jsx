@@ -2,16 +2,35 @@ import { useState } from "react";
 import { useTodo } from "../context/TodoProvider";
 import Model from "./Model";
 import Delete from "./Delete";
-import { Circle, SquarePen, Trash, CircleCheck } from "lucide-react";
+import {
+  Circle,
+  SquarePen,
+  Trash,
+  CircleCheck,
+  LoaderCircle,
+} from "lucide-react";
+import { toggleTodo } from "../utils/todoApi";
 
 function Todo({ _id, title, description, completed }) {
-  const { handleToggle, EditStart, setEditTask } = useTodo();
+  const { dispatch, EditStart, setEditTask } = useTodo();
   const [deleteModel, setDeleteModel] = useState(false);
   const ModelClose = () => setDeleteModel(false);
   const ModelOpen = () => setDeleteModel(true);
   const startEditingTask = () => {
     setEditTask({ id: _id, updateData: { title, description } });
     EditStart();
+  };
+  const [isLoading, setIsLoading] = useState(false);
+  const handleToggle = async (id) => {
+    setIsLoading(true);
+    try {
+      await toggleTodo(id);
+      dispatch({ type: "TOGGLE_TODO", payload: { id } });
+    } catch (error) {
+      console.dir(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <>
@@ -20,13 +39,19 @@ function Todo({ _id, title, description, completed }) {
           <Delete ModelClose={ModelClose} id={_id} />
         </Model>
       )}
-      <div className="bg-white mb-4 border border-neutral-200 text-neutral-800 font-manrope p-4 rounded-lg flex items-center justify-between shadow-xs">
+      <div className="bg-white border border-neutral-200 text-neutral-800 font-manrope p-4 rounded-lg flex items-center justify-between shadow-xs">
         <div className="flex items-center gap-3 sm:gap-4">
           <button
             className={completed ? "text-neutral-800" : "text-neutral-400"}
             onClick={() => handleToggle(_id)}
           >
-            {completed ? <CircleCheck /> : <Circle />}
+            {isLoading ? (
+              <LoaderCircle className="animate-spin" />
+            ) : completed ? (
+              <CircleCheck />
+            ) : (
+              <Circle />
+            )}
           </button>
           <div>
             <h3
