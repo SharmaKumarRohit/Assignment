@@ -8,7 +8,6 @@ const PORT = process.env.PORT;
 
 const todoRoute = require("./routes/todoRoute");
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use("/api/todos", todoRoute);
