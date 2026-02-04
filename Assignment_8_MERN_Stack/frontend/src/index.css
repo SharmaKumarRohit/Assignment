@@ -5,6 +5,10 @@
   --font-manrope: "Manrope", sans-serif;
 }
 
+.scroll-close::-webkit-scrollbar {
+  display: none;
+}
+
 @layer components {
   .form_title {
     @apply text-lg font-bold text-neutral-800;
