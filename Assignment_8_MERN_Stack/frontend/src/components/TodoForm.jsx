@@ -5,34 +5,31 @@ import { addNewTodo, updateTodoById } from "../utils/todoApiRequest";
 
 function TodoForm({ ModelClose }) {
   const { dispatch, isEdit, editTask } = useTodo();
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    title: editTask?.updateData?.title || "",
-    description: editTask?.updateData?.description || "",
-  });
-  const handleChange = (e) => {
-    const target = e.target;
-    setFormData({ ...formData, [target.id]: target.value });
-  };
+  const [title, setTitle] = useState(editTask?.updateData?.title || "");
+  const [description, setDescription] = useState(
+    editTask?.updateData?.description || "",
+  );
+  const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
     try {
       if (!isEdit) {
-        const todo = await addNewTodo(formData);
+        const todo = await addNewTodo({ title, description });
         dispatch({ type: "ADD_TODO", payload: todo.data });
       } else {
-        await updateTodoById(editTask.id, formData);
+        await updateTodoById(editTask.id, { title, description });
         dispatch({
           type: "UPDATE_TODO",
-          payload: { id: editTask.id, updateData: formData },
+          payload: { id: editTask.id, updateData: { title, description } },
         });
       }
-      setFormData({ title: "", description: "" });
+      setTitle("");
+      setDescription("");
     } catch (error) {
       console.dir(error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
       ModelClose();
     }
   };
@@ -58,8 +55,8 @@ function TodoForm({ ModelClose }) {
               id="title"
               placeholder="Enter task title"
               className="form_input"
-              value={formData.title}
-              onChange={handleChange}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
               required
             />
           </div>
@@ -70,8 +67,8 @@ function TodoForm({ ModelClose }) {
               id="description"
               placeholder="Enter task content (optional)"
               className="form_input"
-              value={formData.description}
-              onChange={handleChange}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
           <div className="flex justify-end gap-3 sm:gap-4">
@@ -84,10 +81,10 @@ function TodoForm({ ModelClose }) {
             </button>
             <button
               type="submit"
-              className="btn px-6 py-2.5 bg-neutral-800 text-white disabled:opacity-90 disabled:cursor-not-allowed"
-              disabled={loading}
+              className="btn px-6 py-2.5 bg-neutral-800 text-white"
+              disabled={isLoading}
             >
-              {loading ? (
+              {isLoading ? (
                 <IconLoader2 size={20} className="animate-spin" />
               ) : !isEdit ? (
                 "Add"
